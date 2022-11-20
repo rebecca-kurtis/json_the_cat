@@ -16,7 +16,8 @@ const fetchBreedDescription = function(breedName, callback) {
     const data = JSON.parse(body);
     // If breed is not found
     if (data.length === 0) {
-      callback('Cat Breed not found, try again.', null);
+      let notFound = 'Cat Breed not found, try again.';
+      callback(null, notFound);
       return;
     }
     // Print out the description only
